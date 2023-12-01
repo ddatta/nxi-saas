@@ -12,7 +12,7 @@ import { Form, FormControl, FormField, FormItem } from "@/components/ui/form"
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
-import { ChatCompletionMessageParam } from "openai/resources/index.mjs";
+import { ChatCompletionMessageParam, ChatCompletionContentPart } from "openai/resources/index.mjs";
 
 
 
@@ -104,8 +104,10 @@ const ConversationPage = () => {
                     <div className="flex flex-col-reverse gap-y-4">
                         {messages.map((message) => (
                             <div>
-                                {message.role}
-                            </div>
+                            {messages.map((message, index) => (
+                                <div>Message</div>
+                            ))}
+                          </div>
                         ))}
                     </div>
                 </div>
